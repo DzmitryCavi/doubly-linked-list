@@ -79,9 +79,14 @@ class LinkedList {
       deleteAt(index) {
         let actual = this._head;
         if(index == 0){
-           this._head = this._head.next; 
-           this._head.prev = null;
-           this.length--; }
+          if(this.length = 1){
+            this.clear();
+          } else {
+            this._head = this._head.next;            
+            this._head.prev == null;
+            this.length--;
+          }
+        }
         else {
           actual = actual.next;
           for(var i = 1; i<=index; i++){
@@ -131,23 +136,4 @@ class LinkedList {
         } while(true);
       }
   }
-  
-  
- const list1 = new LinkedList();
- // list1.append(1);
- // list1.append(2);
- // list1.append(3);
- // list1.append(4);
-  //list1.insertAt(2,0);
-  //list1.deleteAt(4);
- console.log(list1.append(4).reverse().deleteAt(0).clear().insertAt(0, 3));
- // for (let j = 0; j<list1.length; j++){console.log(list1.at(j));};
- // list1.reverse();
- // for (let j = 0; j<list1.length; j++){console.log(list1.at(j));};
-  //console.log("index of 2 is "+list1.indexOf(6));
-  
-  //console.log("list is empty ?  "+list1.isEmpty());
-  
-
-
 module.exports = LinkedList;
